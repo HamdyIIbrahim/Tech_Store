@@ -1,0 +1,455 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --main-color:rgb(37, 124, 255);
+    --primary-color:#fff;
+    --card-color:rgba(250, 245, 245, 0.966);
+    --button-color:rgb(214, 229, 248);
+}
+.containerr{
+    width: 80%;
+    margin: 0px 10%;
+}
+.logo{
+    width: 70px;
+    height: 70px;
+}
+.navBar,.list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    height: 10vh;
+    width: 100wh;
+    padding: 5vh;
+}
+.list{
+    width: 60%;
+}
+.li{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.list li:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+.btn{
+    border: 0;
+    background-color: var(--main-color);
+    padding: 15px 20px;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100wh;
+}
+.leftSide{
+    max-width: 40%;
+}
+.rightSide{
+    max-width: 40%;
+    background-image: 'url("../assets/person.webp")';
+}
+.rightSide img{
+    width: 100%;
+    height: 100%;
+}
+.leftSide h1 ,.leftSide span{
+    font-size: 60px;
+    font-weight: bolder;
+}
+span{
+    color: var(--main-color);
+}
+p{
+    padding: 10px 0px;
+    line-height: 1.4;
+    font-size: 20px;
+}
+.leftSide button{
+    margin: 20px;
+}
+.btn.btn2{
+    color: black;
+    background-color: var(--primary-color);
+}
+.person{
+    width: 500px;
+    height: 80vh;
+}
+.textDec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5vh;
+}
+.textDec h1{
+    padding: 10px;
+}
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 60px;
+}
+.items3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.items3 img{
+    width: 150px;
+    height: 150px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    text-align: center;
+}
+.item h1{
+    padding: 20px 0px;
+}
+.card{
+    width: 250px;
+    height: 300px;
+    border-radius: 50px 0px 0px 0px;
+    background-color: var(--card-color);
+    margin: 20px 25px 20px 25px;
+}
+.card .info{
+    padding: 10px;
+}
+.info ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+.info p{
+    font-size: 16px;
+}
+.card img{
+    width: 250px;
+    height: 120px;
+    border-radius: 50px 0px 50px 0px;
+}
+.card .btn{
+    font-size: 16px;
+    text-align: center;
+    width: 70%;
+    padding: 10px 10px;
+}
+.bestSelling{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.bestSelling h1{
+    text-align: center;
+    width: 100%;
+    padding: 0px 0px 60px 0px;
+}
+.bestSelling h1:last-of-type{
+    padding-top: 60px;
+}
+/* .feedback{
+    padding-left: 15vh;
+    width: 80%;
+}
+.picMsg{
+    width: 400px;
+    height: 600px;
+    background-color: var(--card-color);
+}
+.picMsg img{
+    width: 400px;
+    height: 600px;
+}
+.textfeed{
+    width: 400px;
+    height: 200px;
+    margin-top: -200px;
+    margin-left: 60px;
+    background-color: var(--card-color);
+} */
+.footer{
+    background-color: var(--main-color);
+    width: 100%;
+    height: 300px;
+    padding: 5vh;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.address{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+.footer ul{
+    list-style: none;
+    padding: 5px 0px;
+}
+.footer li{
+    padding-top: 10px;
+    font-size: 16px;
+}
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #333333;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+.icon-button:hover {
+    cursor: pointer;
+}
+.icon-button:active {
+    background: #cccccc;
+}
+.icon-button__badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.icon-button img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.profilePic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profilePic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.aboutUS{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 5% 10%;
+    height: 500px;
+    box-shadow: 3px ;
+}
+.aboutText{
+    width: 50%;
+    height: 500px;
+    line-height: 1.4;
+    font-size: 24px;
+}
+.aboutText p{
+    padding-bottom: 50px;
+    font-size: 24px;
+    color: #6d6d6d;
+}
+.aboutText button{
+    margin: 20px 0px 20px 0px ;
+}
+input{
+    padding: 15px;
+    background-color:var(--card-color);
+    border: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5;
+}
+.photo{
+    width: 50%;
+    height: 500px;
+}
+.photo img{
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.contactus{
+    width: 80%;
+    margin: 5% 10%;
+    text-align: center;
+    font-size: 24px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0px;
+}
+.btnbl{
+    background-color: var(--button-color);
+    color: var(--main-color);
+}
+.Products,.userProfile{
+    width: 80%;
+    margin: 0px 10% 5% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.userProfile{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.change{
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+}
+.userProfile .form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.userProfile .form input,.section2 input{
+    width:100%;
+    margin: 20px 0px;
+    font-size: 16px;
+}
+.left,.right{
+    width: 45%;
+}
+.section2{
+    width: 100%;
+}
+.userProfile .button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.userProfile .button button{
+    margin: 20px 20px;
+}
+.btn.btn2{
+    background-color: var(--primary-color);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+.productContainer{
+    width: 80%;
+    margin: 5% 10%;
+}
+.productContainer2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.productImage,.productInfo{
+    width: 45%;
+    height: 500px;
+}
+.productImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+.lastcontainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.quantity,.quantity{
+    width: 30%;
+    height: max-content;
+}
+.quantityContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-align: center;
+}
+.quantityContainer button{
+    font-weight: 900;
+    border-radius: 50%;
+}
+.price span{
+    font-weight: 900;
+    font-size: 24px;
+}
+.price h2{
+    margin-bottom: 35px;
+}
+.section{
+    margin-top: 35px;
+}
+.signUp{
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signupcard{
+    max-width: 50%;
+    margin: 5% 10%;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.signupcard button{
+    margin-top: 2%;
+}
+.signupcard h1{
+    text-align: center;
+}
+.signin{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+.signin p{
+    padding-left: 20%;
+}
