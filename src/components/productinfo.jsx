@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import LogNav from './logNav';
+import {ProductData} from './product'
 function ProductInfo() {
     const [quantity ,SetQuantity]=useState(0);
-    
+    const product = useContext(ProductData);
+    {console.log(product)}
 
     useEffect(()=>{
         if(quantity <= 0){
