@@ -1,7 +1,9 @@
 import React from 'react';
 import Product from './product';
+import { useContext } from 'react';
+import {ProductContext} from '../contexts/product-context'
 function Selling({Data}) {
-    const data = Data.products;
+    const data = useContext(ProductContext).product;
     return ( 
         <div className='bestSelling'>
             <h1><span>Best Selling</span> Products</h1>

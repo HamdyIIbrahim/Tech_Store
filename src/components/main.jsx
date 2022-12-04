@@ -1,5 +1,8 @@
 import React from 'react';
+
 function Main() {
+
+
     return ( 
         <div className='container'>
             <div className='leftSide'>

@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Footer from './footer';
 import LogNav from './logNav';
 import Product from './product';
-function Ourproduct({Data}) {
-    const data=Data.products;
+import { useContext } from 'react';
+import {ProductContext} from '../contexts/product-context'
+function Ourproduct() {
+    const data = useContext(ProductContext).product;
+
     const [name , setName]=useState(true);
     const [newData , setNewData]=useState(data);
     const result =(value)=>{
