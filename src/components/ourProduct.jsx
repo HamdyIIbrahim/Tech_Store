@@ -17,10 +17,6 @@ function Ourproduct() {
     },[name])
     useEffect(()=>{
     },[newData])
-
-    const getData =(id)=>{
-        return data.filter((product)=> product.id === id)
-    }
     return ( 
         <React.Fragment>
             <LogNav />
@@ -40,7 +36,7 @@ function Ourproduct() {
             </div>
             <div className='Products'>
             
-            {newData.map((product)=><Product image={product.image} price={product.price} name={product.name} Id={product.id} getData={getData}/>)}
+            {newData.map((product)=><Product image={product.image} price={product.price} name={product.name} Id={product.id}/>)}
             </div>
             <Footer />
         </React.Fragment>

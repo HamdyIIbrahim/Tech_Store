@@ -16,7 +16,7 @@ function Product({ image, name, price, Id, getData }) {
               <li>
                 <h2>{name}</h2>
               </li>
-              <li>{price}</li>
+              <li>${price}</li>
             </ul>
             <p>There are many things are needed to start the Gadget business</p>
             <ul>
