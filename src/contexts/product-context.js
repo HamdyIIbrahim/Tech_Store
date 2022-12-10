@@ -60,18 +60,57 @@ const DUMMY_PRODUCTS = [
 ];
 
 export const ProductContext = createContext({
-  product:[],
-  getProductById:(id)=>{}
+  product: [],
+  getProductById: (id) => {},
+  shoppingList: (productDetail) => {},
+  listItems: [],
+  removeProductById: (id) => {},
 });
 
 const ProductProvider = ({ children }) => {
-  // const [product, setProduct] = useState(DUMMY_PRODUCTS);
+  const [listItems, setListItems] = useState([]);
 
-  const getProductById = (id)=>{
-    return DUMMY_PRODUCTS.filter((product)=> product.id === id)
-  }
+  const getProductById = (id) => {
+    return DUMMY_PRODUCTS.filter((product) => product.id === id);
+  };
+  const removeProductById = (id) => {
+    
+      setListItems((currentList) => {
+        const productId = currentList.findIndex(
+          (curr) => curr.id === id
+        );
+        if (productId === -1) return currentList;
+        let updatedList = [...currentList]
+        updatedList.splice(productId,1)
+        return updatedList
+      });
 
-  return <ProductContext.Provider value={{product:DUMMY_PRODUCTS,getProductById}}>{children}</ProductContext.Provider>;
+  };
+  const shoppingList = (productDetail) => {
+    setListItems((currentList) => {
+      const productId = currentList.findIndex(
+        (curr) => curr.id === productDetail.id
+      );
+      if (productId !== -1) return currentList;
+      let updatedList = [...currentList]
+      updatedList.push(productDetail)
+      return updatedList
+    });
+  };
+
+  return (
+    <ProductContext.Provider
+      value={{
+        product: DUMMY_PRODUCTS,
+        getProductById,
+        shoppingList,
+        listItems,
+        removeProductById,
+      }}
+    >
+      {children}
+    </ProductContext.Provider>
+  );
 };
 
 export default ProductProvider;

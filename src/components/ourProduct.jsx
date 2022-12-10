@@ -36,7 +36,7 @@ function Ourproduct() {
             </div>
             <div className='Products'>
             
-            {newData.map((product)=><Product image={product.image} price={product.price} name={product.name} Id={product.id}/>)}
+            {newData.map((product)=><Product key={product.id} image={product.image} price={product.price} name={product.name} Id={product.id}/>)}
             </div>
             <Footer />
         </React.Fragment>

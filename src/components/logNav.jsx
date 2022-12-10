@@ -17,15 +17,16 @@ function LogNav() {
                 <li><Link className='li' to="/Contactus" >Contact Us</Link></li>
         </ul>
         <li>
-            <button type="button" class="icon-button">
-                <img src="/products/notifications.png" alt="notifications"></img>
-                <span class="icon-button__badge">2</span>
-            </button>
+            <Link to="/shoppingcart">
+                <button type="button" class="icon-button">
+                    <img src="/products/notifications.png" alt="notifications"></img>
+                    <span class="icon-button__badge">2</span>
+                </button>
+            </Link>
         </li>
         <li>
             <div className="profilePic">
             <Link className='li' to="/Profile" ><img src="/products/feedback.jpg" alt="profilePicture"></img></Link>
-                {/* <img src="/products/feedback.jpg" alt="profilePicture"></img> */}
             </div>
         </li>
         </ul>

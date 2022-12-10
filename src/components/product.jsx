@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 function Product({ image, name, price, Id, getData }) {
   const clicked = (id) => {
     const product = getData(id);

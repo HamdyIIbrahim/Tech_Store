@@ -7,7 +7,7 @@ function Selling({Data}) {
     return ( 
         <div className='bestSelling'>
             <h1><span>Best Selling</span> Products</h1>
-            {data.map((product)=><Product image={product.image} price={product.price} name={product.name} Id={product.id}/>)}
+            {data.map((product)=><Product key={product.id} image={product.image} price={product.price} name={product.name} Id={product.id}/>)}
             <h1><span>Recommended</span> for you</h1>
             <Product image='/products/product5.jpg' price='$230' name='Beats 100X'/>
             <Product image='/products/product6.jpg' price='$570' name='Smart Org'/>

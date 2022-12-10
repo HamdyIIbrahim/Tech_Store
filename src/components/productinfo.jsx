@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import LogNav from './logNav';
 import { useContext } from 'react';
 import {ProductContext} from '../contexts/product-context'
 function ProductInfo() {
     const { Id } = useParams();
-    console.log(Id);
     const [quantity ,SetQuantity]=useState(0);
-
-    const ctx = useContext(ProductContext);
+    const {shoppingList , getProductById } = useContext(ProductContext);
     const [result , setResult] =useState({})
-
     useEffect(()=>{
-    const response =   ctx.getProductById(Id)
+    const response = getProductById(Id)
+    
     setResult(response[0])
         if(quantity <= 0){
             SetQuantity(0)
@@ -45,7 +43,10 @@ function ProductInfo() {
                                 <span>${`${+result.price * quantity}`}</span>
                             </div>
                             <div className='section'>
-                            <button className='btn'> Order Now</button>
+                                
+                                <Link className='btn' to={`/shoppingcart`} onClick={()=>shoppingList(result)}> Order Now</Link>
+
+                                    
                             </div>
                         </div>
                     </div>

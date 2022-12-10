@@ -17,6 +17,7 @@ import Error from "./components/error";
 import Signup from "./components/signup";
 import Signin from "./components/signin";
 import ProductProvider from "./contexts/product-context";
+import ShoppingCart from "./components/shoppingCart";
 
 const data = {
   products: [
@@ -106,6 +107,7 @@ function App() {
           <Route path="/Profile" element={<UserProfile />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
         </Routes>
       </div>
     </ProductProvider>
