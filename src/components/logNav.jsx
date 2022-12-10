@@ -1,6 +1,9 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import { ProductContext } from '../contexts/product-context'
+import { useContext } from 'react';
 function LogNav() {
+    const {listItems}=useContext(ProductContext);
     return (
     <ul className="navBar">
         <li>
@@ -20,7 +23,7 @@ function LogNav() {
             <Link to="/shoppingcart">
                 <button type="button" class="icon-button">
                     <img src="/products/notifications.png" alt="notifications"></img>
-                    <span class="icon-button__badge">2</span>
+                    <span class="icon-button__badge">{listItems.length}</span>
                 </button>
             </Link>
         </li>

@@ -17,8 +17,6 @@ function ShoppingCart (){
                         <h1 className="Heading">Shopping Cart</h1>
                     </div>
                     <div className='cardItemcontanier'>
-                        <CardItem image="/products/product5.jpg" price="220" name="Iphone" />
-                        <CardItem image="/products/product5.jpg" price="220" name="Iphone" />
                         {listItems.map((item)=><CardItem key={item.id} image={item.image} price={item.price} name={item.name} Id={item.id} />)}
                     </div>
                 </div>
