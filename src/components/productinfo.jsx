@@ -5,12 +5,21 @@ import { useContext } from 'react';
 import {ProductContext} from '../contexts/product-context'
 function ProductInfo() {
     const { Id } = useParams();
-    const [quantity ,SetQuantity]=useState(0);
-    const {shoppingList , getProductById } = useContext(ProductContext);
+    const {shoppingList , getProductById ,getQuantity ,increaseQuantity,decreaseQuantity } = useContext(ProductContext);
     const [result , setResult] =useState({})
+    const quan = getQuantity(Id)
+    const [quantity ,SetQuantity]=useState(quan);
+    const handleIncrement=()=>{
+        const incrementItem=increaseQuantity(Id)
+        SetQuantity(incrementItem)
+    }
+    const handleDecrement=()=>{
+        const decrementItem=decreaseQuantity(Id)
+        SetQuantity(decrementItem)
+    }
+    
     useEffect(()=>{
     const response = getProductById(Id)
-    
     setResult(response[0])
         if(quantity <= 0){
             SetQuantity(0)
@@ -32,21 +41,18 @@ function ProductInfo() {
                             <div className='quantity'>
                                 <h2>quantity</h2>
                                 <div className='quantityContainer'>
-                                <button className='btn btn2' onClick={()=>SetQuantity(quantity -1)}>-</button>
+                                <button className='btn btn2' onClick={handleDecrement}>-</button>
                                 <p>{quantity}</p>
-                                <button className='btn btn2' onClick={()=>SetQuantity(quantity +1)}>+</button>
+                                <button className='btn btn2' onClick={handleIncrement}>+</button>
                                 </div>
                                 
                             </div>
                             <div className='price'>
-                                <h2>{result.price}</h2>
+                                <h2>${result.price}</h2>
                                 <span>${`${+result.price * quantity}`}</span>
                             </div>
                             <div className='section'>
-                                
                                 <Link className='btn' to={`/shoppingcart`} onClick={()=>shoppingList(result)}> Order Now</Link>
-
-                                    
                             </div>
                         </div>
                     </div>

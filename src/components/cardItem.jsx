@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProductContext } from '../contexts/product-context'
 import { useContext } from 'react';
 
 const CardItem = ({image , price , name ,Id}) => {
-    const {removeProductById}=useContext(ProductContext);
+    const {removeProductById,getQuantity ,increaseQuantity,decreaseQuantity}=useContext(ProductContext);
+    const quan = getQuantity(Id)
+    const [quantity ,SetQuantity]=useState(quan);
+    const handleIncrement=()=>{
+        const incrementItem=increaseQuantity(Id)
+        SetQuantity(incrementItem)
+    }
+    const handleDecrement=()=>{
+        const decrementItem=decreaseQuantity(Id)
+        SetQuantity(decrementItem)
+    }
+    useEffect(()=>{
+        if(quantity <= 0){
+            SetQuantity(0)
+        }
+    },[quantity])
     return ( 
         <>
             <div className='Cart-Items'>
@@ -14,9 +29,9 @@ const CardItem = ({image , price , name ,Id}) => {
                     <h1 className='title'>{name}</h1>
                 </div>
                 <div className='counter'>
-                    <div className='btnproduct'>+</div>
-                    <div className='count'>3</div>
-                    <div className='btnproduct'>-</div>
+                    <button className='btnproduct' onClick={handleIncrement}>+</button>
+                    <div className='count'>{quantity}</div>
+                    <button className='btnproduct' onClick={handleDecrement}>-</button>
                 </div>
                 <div className='prices'>
                 <div className='amount'>${price}</div>
