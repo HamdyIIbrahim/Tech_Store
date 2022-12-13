@@ -4,6 +4,7 @@ import Footer from './footer';
 import LogNav from './logNav';
 import { ProductContext } from '../contexts/product-context'
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 function ShoppingCart (){
     const {listItems}=useContext(ProductContext);
     useEffect(()=>{
@@ -20,6 +21,9 @@ function ShoppingCart (){
                         {listItems.map((item)=><CardItem key={item.id} image={item.image} price={item.price} name={item.name} Id={item.id} />)}
                     </div>
                 </div>
+            </div>
+            <div className='buttonclass'>
+                <button className='btn order'><Link className='btn' to='/checkoutOrder'>Get Your Order Now</Link></button>
             </div>
             
         <Footer />

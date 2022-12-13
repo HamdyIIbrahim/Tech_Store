@@ -18,6 +18,7 @@ import Signup from "./components/signup";
 import Signin from "./components/signin";
 import ProductProvider from "./contexts/product-context";
 import ShoppingCart from "./components/shoppingCart";
+import GetOrder from "./components/getOrder";
 
 const data = {
   products: [
@@ -108,6 +109,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/checkoutOrder" element={<GetOrder />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
       </div>
     </ProductProvider>

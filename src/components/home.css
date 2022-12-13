@@ -460,7 +460,7 @@ input{
     margin: 10px 0 10px 0;
     background-color: #ffffff;
     border-radius: 20px;
-    box-shadow: 0px 10px 20px var(--main-color);
+    box-shadow: 0px 10px 20px rgb(37 124 255 / 54%);
     overflow-y: scroll;
 }
 .Header{
@@ -529,7 +529,6 @@ input{
 }
 .count{
     font-size: 20px;
-    font-family: ‘Open Sans’;
     font-weight: 900;
     color: #202020;
 }
@@ -540,8 +539,7 @@ input{
 .amount{
     padding-top: 20px;
     font-size: 26px;
-    font-family: ‘Open Sans’;
-    font-weight: 800;
+    font-weight: 900;
     color: #202020;
 }
 .remove{
@@ -556,4 +554,34 @@ input{
 .cardItemcontanier{
     width: 90%;
     margin: 3% 5%;
+}
+.buttonclass{
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn.order{
+    margin: 1%;
+}
+.getOrderContainer{
+    width: 80%;
+    margin: 1% 10%;
+    height: 1000px;
+}
+.aboutText.Order{
+    width: 100%;
+}
+.form.valid,.btn.valid{
+    margin: 1% 4%;
+}
+.container.notfound{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container.notfound h1{
+    font-size: 60px;
+    font-weight: 900;
 }

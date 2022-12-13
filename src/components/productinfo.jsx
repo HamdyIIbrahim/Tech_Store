@@ -48,7 +48,7 @@ function ProductInfo() {
                                 
                             </div>
                             <div className='price'>
-                                <h2>${result.price}</h2>
+                                <h2>Price</h2>
                                 <span>${`${+result.price * quantity}`}</span>
                             </div>
                             <div className='section'>
