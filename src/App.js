@@ -1,12 +1,6 @@
-import Nav from "./components/nav";
 import "./components/home.css";
 import "./components/media.css";
-import Main from "./components/main";
 import { Route, Routes } from "react-router-dom";
-import Features from "./components/features";
-import Selling from "./components/bestSelling";
-// import Feedback from "./components/feedbach";
-import Footer from "./components/footer";
 import React from "react";
 import Ourproduct from "./components/ourProduct";
 import AboutUs from "./components/aboutUs";
@@ -20,6 +14,7 @@ import ProductProvider from "./contexts/product-context";
 import ShoppingCart from "./components/shoppingCart";
 import GetOrder from "./components/getOrder";
 import CongrateOrder from "./components/congrateorder";
+import Home from "./components/home";
 
 const data = {
   products: [
@@ -82,6 +77,7 @@ const data = {
   ],
 };
 function App() {
+  
   return (
     <ProductProvider>
       <div className="app">
@@ -90,15 +86,7 @@ function App() {
             path="/"
             exact
             element={
-              <React.Fragment>
-                <Nav />
-                <div className="containerr">
-                  <Main />
-                  <Features />
-                  <Selling Data={data} />
-                </div>
-                <Footer />
-              </React.Fragment>
+              <Home />
             }
           />
           <Route path="/Products" element={<Ourproduct />} />

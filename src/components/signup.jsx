@@ -19,7 +19,7 @@ const Signup = () => {
                 body: JSON.stringify({ email, password, returnSecureToken: true }),
             }
             ).then(() => {
-                Navigate('/')
+                Navigate('/signin')
             }).catch(error=>{
                 console.log(error)
             });

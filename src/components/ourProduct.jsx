@@ -4,8 +4,10 @@ import LogNav from './logNav';
 import Product from './product';
 import { useContext } from 'react';
 import {ProductContext} from '../contexts/product-context'
+import Nav from './nav';
 function Ourproduct() {
     const data = useContext(ProductContext).product;
+    const { disable } = useContext(ProductContext);
 
     const [name , setName]=useState(true);
     const [newData , setNewData]=useState(data);
@@ -19,7 +21,7 @@ function Ourproduct() {
     },[newData])
     return ( 
         <React.Fragment>
-            <LogNav />
+            {disable ? <LogNav /> : <Nav />}
             <div className='contactus'>
                 <h1>Our <span>Products</span></h1>
                 <div className='buttons'>
@@ -31,7 +33,7 @@ function Ourproduct() {
                     <button id='4' className={'btn ' + (name === 4 ? "":"btnbl")} onClick={()=>setName(4)}>Alarm Clock</button>
                     <button id='5' className={'btn ' + (name === 5 ? "":"btnbl")} onClick={()=>setName(5)}>Calculator</button>
                     <button id='6' className={'btn ' + (name === 6 ? "":"btnbl")} onClick={()=>setName(6)}>DVD Player</button>
-                    <button id='8' className={'btn ' + (name === 8 ? "":"btnbl")} onClick={()=>setName(7)}>Ebook</button>
+                    <button id='8' className={'btn ' + (name === 7 ? "":"btnbl")} onClick={()=>setName(7)}>Ebook</button>
                 </div>
             </div>
             <div className='Products'>

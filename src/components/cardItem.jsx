@@ -34,7 +34,7 @@ const CardItem = ({image , price , name ,Id}) => {
                     <button className='btnproduct' onClick={handleDecrement}>-</button>
                 </div>
                 <div className='prices'>
-                <div className='amount'>${price}</div>
+                <div className='amount'>${+price * quantity}</div>
                     <button className='remove' onClick={()=>removeProductById(Id)}>Remove</button>
                 </div>
             </div>

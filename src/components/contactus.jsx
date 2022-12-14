@@ -1,10 +1,14 @@
 import React from 'react';
 import Footer from './footer';
 import LogNav from './logNav';
+import { useContext } from "react";
+import { ProductContext } from "../contexts/product-context";
+import Nav from './nav';
 function Contactus() {
+    const { disable } = useContext(ProductContext);
     return ( 
         <React.Fragment>
-            <LogNav />
+            {disable ? <LogNav /> : <Nav />}
             <div className='aboutUS reverse'>
                 <div className='aboutText'>
                     <h1><span>Contact</span> Us</h1>

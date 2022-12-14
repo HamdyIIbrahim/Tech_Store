@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { Link , useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import Nav from "./nav";
+import { useContext } from 'react';
+import { ProductContext } from "../contexts/product-context";
 
 const Signin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const Navigate =useNavigate();
+    const {disabled,handleLogin}=useContext(ProductContext);
     function submitHandler() {
         fetch(
         `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`,
@@ -17,6 +20,7 @@ const Signin = () => {
         }
         ).then(() => {
             Navigate('/')
+            handleLogin()
         }).catch(error=>{
             console.log(error)
         });
@@ -49,7 +53,7 @@ const Signin = () => {
                 <p>
                 Create new account? <span><Link to='/signup' >Sign up</Link></span>
                 </p>
-                <button className="btn" onClick={submitHandler}>
+                <button className="btn" onClick={submitHandler} disabled={disabled}>
                 Sign in
                 </button>
             </div>

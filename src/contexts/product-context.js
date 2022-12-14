@@ -77,11 +77,13 @@ export const ProductContext = createContext({
   increaseQuantity: (id) => {},
   decreaseQuantity: (id) => {},
   orderConfirmed: () => {},
+  handleLogin: () => {},
   
 });
 
 const ProductProvider = ({ children }) => {
   const [listItems, setListItems] = useState([]);
+  const [disable, setDisable] = useState(false);
 
   const getProductById = (id) => {
     return DUMMY_PRODUCTS.filter((product) => product.id === id);
@@ -133,6 +135,10 @@ const ProductProvider = ({ children }) => {
     setListItems([]);
   }
 
+  const handleLogin=()=>{
+    setDisable(true)
+  }
+
   return (
     <ProductContext.Provider
       value={{
@@ -140,11 +146,13 @@ const ProductProvider = ({ children }) => {
         getProductById,
         shoppingList,
         listItems,
+        disable,
         removeProductById,
         getQuantity,
         increaseQuantity,
         decreaseQuantity,
         orderConfirmed,
+        handleLogin,
       }}
     >
       {children}
