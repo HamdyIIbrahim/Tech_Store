@@ -76,6 +76,7 @@ export const ProductContext = createContext({
   getQuantity: (id) => {},
   increaseQuantity: (id) => {},
   decreaseQuantity: (id) => {},
+  orderConfirmed: () => {},
   
 });
 
@@ -128,6 +129,9 @@ const ProductProvider = ({ children }) => {
       return 0;
     }
   };
+  const orderConfirmed =()=>{
+    setListItems([]);
+  }
 
   return (
     <ProductContext.Provider
@@ -140,6 +144,7 @@ const ProductProvider = ({ children }) => {
         getQuantity,
         increaseQuantity,
         decreaseQuantity,
+        orderConfirmed,
       }}
     >
       {children}

@@ -29,7 +29,7 @@ function GetOrder() {
                         <label>Phone Number</label>
                         <input type="text" placeholder='Enter your Phone Number'></input>
                     </form>
-                    <button className='btn valid'><Link className='btn' to=''>Confirm Your Payment Information</Link></button>
+                    <button className='btn valid'><Link className='btn' to='/confirmedOrder'>Confirm Your Payment Information</Link></button>
                 </div>
             </div>
             <Footer />

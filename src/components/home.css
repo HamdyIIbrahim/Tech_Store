@@ -7,10 +7,13 @@
     text-decoration: none;
 }
 :root{
-    --main-color:rgb(37, 124, 255);
+    --main-color:rgb(27, 115, 248);
     --primary-color:#fff;
     --card-color:rgba(250, 245, 245, 0.966);
     --button-color:rgb(214, 229, 248);
+}
+:visited{
+    color: var(--main-color);
 }
 .containerr{
     width: 80%;
@@ -584,4 +587,22 @@ input{
 .container.notfound h1{
     font-size: 60px;
     font-weight: 900;
+}
+.imgOrder{
+    display: contents;
+}
+.confirmOrder{
+    width: 70%;
+    margin: 1% 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.8;
+    
+}
+.confirmOrder img{
+    align-items: center;
+    width: 50%;
+    height: 50%;
 }

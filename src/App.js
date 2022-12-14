@@ -19,6 +19,7 @@ import Signin from "./components/signin";
 import ProductProvider from "./contexts/product-context";
 import ShoppingCart from "./components/shoppingCart";
 import GetOrder from "./components/getOrder";
+import CongrateOrder from "./components/congrateorder";
 
 const data = {
   products: [
@@ -111,6 +112,7 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/checkoutOrder" element={<GetOrder />} />
           <Route path="/error" element={<Error />} />
+          <Route path="/confirmedOrder" element={<CongrateOrder />} />
         </Routes>
       </div>
     </ProductProvider>
