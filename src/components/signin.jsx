@@ -1,33 +1,57 @@
 import React, { useState } from "react";
-import { Link , useNavigate } from "react-router-dom";
+import { Link , redirect, useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import Nav from "./nav";
 import { useContext } from 'react';
 import { ProductContext } from "../contexts/product-context";
+import LogNav from "./logNav";
+import { ToastContainer, toast } from "react-toastify";
 
 const Signin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const Navigate =useNavigate();
-    const {disabled,handleLogin}=useContext(ProductContext);
-    function submitHandler() {
-        fetch(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`,
-        {
-            method: "Post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password, returnSecureToken: true }),
+    const {disabled,handleLogin,disable}=useContext(ProductContext);
+    const validateData = () => {
+        const Email = email.trim();
+        const Password = password.trim();
+        if (Email === "") {
+            toast.error("UserName is Required");
         }
-        ).then(() => {
-            Navigate('/')
-            handleLogin()
-        }).catch(error=>{
-            console.log(error)
-        });
+        if(Password === ''){
+            toast.error("Password is Required");
+        }
+        if (Email !== "" && Password !== ""){
+            fetch(
+                `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`,
+                {
+                    method: "Post",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email:Email, password:Password, returnSecureToken: true }),
+                }
+                ).then((response) => {
+                    return response.json()
+                }).then((data)=>{
+                    if(data.registered === true){
+                        Navigate("/")
+                        handleLogin()
+                    }else{
+                        toast.error(data.error.message)
+                    }
+                    
+                }).catch(()=>{
+                    toast.error("error")
+                });
+        }
+    };
+    function submitHandler(e) {
+        e.preventDefault();
+        validateData();
     }
     return (
         <React.Fragment>
-        <Nav />
+        <ToastContainer />
+        {disable ? <LogNav /> : <Nav />}
         <div className="signUp">
             <div className="signupcard">
             <h1>
@@ -40,6 +64,7 @@ const Signin = () => {
                 placeholder="Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
                 />
                 <label>Password</label>
                 <input
@@ -47,6 +72,7 @@ const Signin = () => {
                 placeholder="Your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
                 />
             </form>
             <div className="signin">

@@ -101,6 +101,7 @@ function App() {
           <Route path="/checkoutOrder" element={<GetOrder />} />
           <Route path="/error" element={<Error />} />
           <Route path="/confirmedOrder" element={<CongrateOrder />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </ProductProvider>
