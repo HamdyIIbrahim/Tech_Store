@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Footer from "./footer";
 import Nav from "./nav";
@@ -9,10 +9,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirmation] = useState("");
-//   const submitHandler = (e) => {
-//     e.preventDefault();
-//     validateData();
-//   };
   const validateData = () => {
     const Email = email.trim();
     const Password = password.trim();

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link , redirect, useNavigate } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import Nav from "./nav";
 import { useContext } from 'react';
