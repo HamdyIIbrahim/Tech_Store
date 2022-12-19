@@ -1,9 +1,20 @@
-@media(max-width:759px){
+@media(max-width:790px){
     .navBar,.list{
         display: flex;
         flex-direction: column;
         padding: 1vh;
         height: 27vh;
+    }
+    .aboutUS{
+        display: flex;
+        flex-direction: column-reverse;
+        height: fit-content;
+        width: 80vh;
+        margin: 0;
+    }
+    .photo img{
+        width: 80%;
+        height: 90%;
     }
     .list{
         width: 80%;
@@ -22,10 +33,61 @@
         align-items: center;
     }
     .leftSide,.rightSide{
-        max-width: 100%;
+        max-width: 100vh;
+    }
+    .aboutText p,.aboutText h1,.photo{
+        width: 80vh;
+        text-align: center;
+    }
+    .aboutText{
+        width: 80vh;
+    }
+    .photo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navBar,.footer{
+        width: 100vh;
+    }
+    .Container.cart{
+        width: 94vh;
+        margin: 0 3%;
+    }
+    .userProfile,.getOrderContainer,.confirmOrder{
+        width: 90vh;
+        margin-left: 5vh;
     }
     
 }
+@media(max-width:920px){
+    .aboutUS{
+        display: flex;
+        flex-direction: column-reverse;
+        height: fit-content;
+        width: 100vh;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    .aboutText p,.aboutText h1,.photo{
+        width: 80vh;
+        text-align: center;
+    }
+    .aboutText{
+        width: 80vh;
+    }
+    .photo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .signUp{
+        width: 100vh;
+        margin: 0;
+    }
+}
+
 @media(max-width:570px){
     .items3{
         display: flex;
@@ -38,22 +100,47 @@
     }
     .textDec h1{
         text-align: center;
-        width: 107%;
+        width: 100vh;
         padding: 20px 0px;
     }
+    .aboutText,.photo{
+        width: 80vh;
+    }
+    .photo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutUS{
+        display: flex;
+        flex-direction: column-reverse;
+        height: fit-content;
+        width: 80vh;
+        margin: 2% 10%;
+    }
+    .signUp{
+        width: 100vh;
+    }
 }
-@media(max-width:500px){
+@media(max-width:570px){
     .app{
-        width: 135%;
+        width: 100vh;
+    }
+    .aboutText,.photo{
+        width: 80vh;
+    }
+    .signUp{
+        width: 100vh;
+        margin: 0;
     }
 }
 @media(max-width:360px){
     .app{
-        width: 150%;
+        width: 100vh;
     }
 }
 @media(max-width:210px){
     .app{
-        width: 255%;
+        width: 100vh;
     }
 }

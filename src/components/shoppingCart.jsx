@@ -12,7 +12,7 @@ function ShoppingCart (){
     return (
     <>
         <LogNav />
-            <div className='Container'>
+            <div className='Container cart'>
                 <div className='Cart-Container'>
                     <div className="Header">
                         <h1 className="Heading">Shopping Cart</h1>

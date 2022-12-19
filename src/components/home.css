@@ -29,11 +29,14 @@
     align-items: center;
     list-style: none;
     height: 10vh;
-    width: 100wh;
+    width: 100%;
     padding: 5vh;
 }
 .list{
     width: 60%;
+}
+.list.Icon{
+    width: 30vh;
 }
 .li{
     text-decoration: none;
@@ -53,6 +56,7 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 .container{
     display: flex;
@@ -275,8 +279,8 @@ p{
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: 5% 10%;
-    height: 500px;
+    margin: 0% 10%;
+    height: 100vh;
     box-shadow: 3px ;
 }
 .aboutText{
@@ -306,11 +310,15 @@ input{
 .photo{
     width: 50%;
     height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .photo img{
     width: 80%;
     height: 100%;
     border-radius: 20px;
+    
 }
 .reverse{
     flex-direction: row-reverse;
@@ -324,12 +332,14 @@ input{
 .buttons{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     padding: 5% 0px;
 }
 .btnbl{
     background-color: var(--button-color);
     color: var(--main-color);
+    margin-bottom: 10px;
 }
 .Products,.userProfile{
     width: 80%;

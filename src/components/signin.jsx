@@ -51,7 +51,8 @@ const Signin = () => {
     return (
         <React.Fragment>
         <ToastContainer />
-        {disable ? <LogNav /> : <Nav />}
+        {/* {disable ? <LogNav /> : <Nav />} */}
+        <LogNav />
         <div className="signUp">
             <div className="signupcard">
             <h1>
