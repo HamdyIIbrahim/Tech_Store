@@ -27,13 +27,18 @@ function Ourproduct() {
                 <div className='buttons'>
                     <button id='1' className={'btn ' + (name === 1 ? "":"btnbl")} onClick={()=>{setName(1)
                     result("headphones")}}>HeadPhones</button>
-                    <button id='2' className={'btn ' + (name === 2 ? "":"btnbl")} onClick={()=>setName(2)}>Mouse</button>
+                    <button id='2' className={'btn ' + (name === 2 ? "":"btnbl")} onClick={()=>{setName(2)
+                    result("mouse")}}>Mouse</button>
                     <button id='3' className={'btn ' + (name === 3 ? "":"btnbl")} onClick={()=>{setName(3)
                     result("watch")}}>Digital Watch</button>
-                    <button id='4' className={'btn ' + (name === 4 ? "":"btnbl")} onClick={()=>setName(4)}>Alarm Clock</button>
-                    <button id='5' className={'btn ' + (name === 5 ? "":"btnbl")} onClick={()=>setName(5)}>Calculator</button>
-                    <button id='6' className={'btn ' + (name === 6 ? "":"btnbl")} onClick={()=>setName(6)}>DVD Player</button>
-                    <button id='8' className={'btn ' + (name === 7 ? "":"btnbl")} onClick={()=>setName(7)}>Ebook</button>
+                    <button id='4' className={'btn ' + (name === 4 ? "":"btnbl")} onClick={()=>{setName(4)
+                    result("Alarm")}}>Alarm Clock</button>
+                    <button id='5' className={'btn ' + (name === 5 ? "":"btnbl")} onClick={()=>{setName(5)
+                    result("calculator")}}>Calculator</button>
+                    <button id='6' className={'btn ' + (name === 6 ? "":"btnbl")} onClick={()=>{setName(6)
+                    result("dvd")}}>DVD Player</button>
+                    <button id='8' className={'btn ' + (name === 7 ? "":"btnbl")} onClick={()=>{setName(7)
+                    result("ebook")}}>Ebook</button>
                 </div>
             </div>
             <div className='Products'>

@@ -58,6 +58,9 @@
         width: 90vh;
         margin-left: 5vh;
     }
+    .card{
+        width: 80vh;
+    }
     
 }
 @media(max-width:920px){
@@ -85,6 +88,18 @@
     .signUp{
         width: 100vh;
         margin: 0;
+    }
+    .productContainer{
+        margin: 5vh 0;
+    }
+    .productContainer2{
+        width: 100vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .productImage,.productInfo{
+        width: 70vh;
+        margin-bottom: 5vh;
     }
 }
 
@@ -121,6 +136,9 @@
     .signUp{
         width: 100vh;
     }
+    .card{
+        width: 80vh;
+    }
 }
 @media(max-width:570px){
     .app{
@@ -132,6 +150,9 @@
     .signUp{
         width: 100vh;
         margin: 0;
+    }
+    .card{
+        width: 80vh;
     }
 }
 @media(max-width:360px){

@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import LogNav from './logNav';
 import { useContext } from 'react';
 import {ProductContext} from '../contexts/product-context'
+import Nav from './nav';
+import { ToastContainer, toast } from "react-toastify";
+
 function ProductInfo() {
     const { Id } = useParams();
-    const {shoppingList , getProductById ,getQuantity ,increaseQuantity,decreaseQuantity } = useContext(ProductContext);
+    const Navigate =useNavigate();
+    const {shoppingList , getProductById ,getQuantity ,increaseQuantity,decreaseQuantity ,disable } = useContext(ProductContext);
     const [result , setResult] =useState({})
     const quan = getQuantity(Id)
     const [quantity ,SetQuantity]=useState(quan);
+    const handleNavigate=()=>{
+        if(disable === true){
+            Navigate('/shoppingcart')
+        }else{
+            Navigate('/signup')
+        }
+    }
     const handleIncrement=()=>{
         const incrementItem=increaseQuantity(Id)
         SetQuantity(incrementItem)
@@ -27,7 +38,8 @@ function ProductInfo() {
     },[quantity])
     return ( 
         <React.Fragment>
-            <LogNav />
+            <ToastContainer />
+            {disable ? <LogNav /> : <Nav />}
             <div className='productContainer'>
                 <div className='productContainer2'>
                     <div className='productImage'>
@@ -52,7 +64,9 @@ function ProductInfo() {
                                 <span>${`${+result.price * quantity}`}</span>
                             </div>
                             <div className='section'>
-                                <Link className='btn' to={`/shoppingcart`} onClick={()=>shoppingList(result)}> Order Now</Link>
+                                <button className='btn'  onClick={()=>{shoppingList(result)
+                                    handleNavigate()
+                                }}>Order Now</button>
                             </div>
                         </div>
                     </div>
